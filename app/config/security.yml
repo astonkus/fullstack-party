@@ -1,0 +1,35 @@
+security:
+    providers:
+        webservice:
+            id: app.oauth_aware.user_provider.service
+
+    firewalls:
+        secured_area:
+            anonymous: ~
+            logout: ~
+            oauth:
+                resource_owners:
+                    my_github: "/login/check-github"
+                login_path: /login
+                use_forward: false
+                failure_path: /login
+
+                oauth_user_provider:
+                    service: app.oauth_aware.user_provider.service
+
+
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            logout:
+                path: logout
+                target: homepage
+
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/connect/my_github, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: IS_AUTHENTICATED_FULLY }

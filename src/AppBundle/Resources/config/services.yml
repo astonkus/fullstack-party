@@ -1,0 +1,8 @@
+services:
+    app.oauth_aware.user_provider.service:
+        class: HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider
+
+    app.manager.issue:
+        class: AppBundle\Manager\IssueManager
+        arguments:
+            - '@github_integration.client'

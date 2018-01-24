@@ -1,0 +1,77 @@
+.list__right-side {
+    background: url("../images/list-bg.png") center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.list__left-side {
+    background-color: $grey-light;
+}
+
+.list__container {
+    height: 100%;
+    display: table;
+    box-sizing: border-box;
+}
+
+.list__row {
+    height: 100%;
+}
+
+.list__right-side--row {
+    width: 100%;
+}
+
+.list__right-side--title {
+    color: $white;
+    width: 100%;
+    font-weight: 300;
+}
+
+.list__issues-row {
+    width: 100%;
+    margin: 0;
+}
+
+.list__issue {
+    padding: 20px;
+}
+
+.list__issue--icon {
+    margin-right: 20px;
+    float: left;
+}
+
+.list__issue--content {
+    float: left;
+    max-width: 500px;
+
+    a {
+        color: $grey-dark;
+    }
+}
+
+.list__issue--comment {
+    float: right;
+
+    span:before {
+        content: "";
+        display: block;
+        background: url("../images/icons/ico-comments.png") no-repeat;
+        width: 16px;
+        height: 16px;
+        float: left;
+        margin: 3px 6px 0 0;
+    }
+}
+
+.list__issue--time {
+    color: $grey-mid;
+    font-size: 12px;
+
+    span {
+        color: $green-dark;
+    }
+}

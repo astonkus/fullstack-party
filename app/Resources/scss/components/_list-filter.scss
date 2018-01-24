@@ -1,0 +1,29 @@
+.list__filter {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    a {
+        margin-left: 10px;
+        margin-right: 10px;
+        color: $grey-dark;
+        display: inline-block;
+
+        &:before {
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            float: left;
+            margin: 0px 6px 0 0;
+        }
+    }
+}
+
+.list__filter--open:before {
+    background: url("../images/icons/ico-attention-black.png") no-repeat;
+}
+
+.list__filter--closed:before {
+    background: url("../images/icons/ico-closed-black.png") no-repeat;
+}

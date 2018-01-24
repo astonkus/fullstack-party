@@ -1,0 +1,23 @@
+my_github: Login With GitHub
+app:
+    title: Github
+    pagination:
+        next: Next
+        prev: Previous
+
+    list:
+        full_stack_title: Full Stack Developer Task
+        opened: opened
+        by: by
+        state:
+            open: Open
+            closend: Closed
+
+    view:
+        back: Back to issues
+        open_this_issue: open this issue.
+        comment: comment
+        commented: commented
+
+    header:
+        logout: Logout

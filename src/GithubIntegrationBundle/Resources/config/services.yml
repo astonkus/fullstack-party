@@ -1,0 +1,5 @@
+services:
+    github_integration.client:
+        class: GithubIntegrationBundle\Client\Client
+        arguments:
+            - '@security.token_storage'

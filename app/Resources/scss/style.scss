@@ -1,0 +1,23 @@
+@import "global/index";
+@import "components/index";
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    font-family: $font;
+    font-size: 13px;
+    font-weight: 300;
+    color: $grey-dark;
+    background-color: $grey-light;
+}
+
+a {
+    color: $green-dark;
+
+    &:hover {
+        color: $green-dark;
+    }
+}

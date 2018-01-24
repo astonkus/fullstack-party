@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container issue__container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12 issue__back-block">
+                        <a class="issue__back-block--button" href="{{ path('issues', { 'state': data.state }) }}" title="{{ 'app.view.back'|trans }}">{{ 'app.view.back'|trans }}</a>
+                    </div>
+
+                    <div class="col-lg-12 issue__block">
+                        <h1 class="issue__block--title">{{ data.title }} <span>#{{ data.number }}</span></h1>
+                        <div class="issue__block--state">{{ data.state }}</div>
+                        <div class="issue__block--time"><span>{{ data.user }}</span> {{ 'app.view.open_this_issue'|trans }} {{ data.createdAt|ago }} - {{ data.commentsCount }} {{ 'app.view.comment'|trans }}</div>
+                    </div>
+
+                    {% for comment in data.comments %}
+                        <div class="col-lg-12">
+                            <div class="comment__user-image">
+                                <img src="{{ comment.avatar }}" alt="{{ comment.user }}" />
+                            </div>
+                            <div class="row white-block">
+                                <div class="col-lg-12 comment__block--header">
+                                    <span>{{ comment.user }}</span> {{ 'app.view.commented'|trans }} {{ data.createdAt|ago }}
+                                </div>
+                                <div class="col-lg-12 comment__block--body">
+                                    {{ comment.body }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

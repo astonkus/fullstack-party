@@ -1,0 +1,13 @@
+.btn-login {
+    background-color: $green;
+    width: 340px;
+    line-height: 40px;
+    font-size: 12px;
+    font-weight: bold;
+    color: $white;
+
+    &:hover {
+        background-color: $green-dark;
+        color: $white;
+    }
+}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid d-flex h-100 login-page">
+        <div class="row justify-content-center align-self-center text-center login-page__wrapper">
+            <div class="col-lg-12 login-page__wrapper--logo">
+                <img src="{{ asset('assets/images/logo-white.png') }}">
+            </div>
+            {% for owner in hwi_oauth_resource_owners() %}
+            <div class="col-lg-12">
+                <a class="btn btn-login" href="{{ hwi_oauth_login_url(owner) }}">{{ owner|trans }}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

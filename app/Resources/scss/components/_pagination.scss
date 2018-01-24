@@ -1,0 +1,39 @@
+.pagination {
+    display: inherit;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pagination__page {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $white;
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    color: $grey-dark;
+    margin-left: 5px;
+    margin-right: 5px;
+
+    &.active {
+        background-color: $light-green;
+        color: $white;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.pagination__button {
+    margin-left: 25px;
+    margin-right: 25px;
+    line-height: 30px;
+    display: inline-block;
+    color: $grey-dark;
+
+    &:hover {
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,24 @@
+.comment__user-image {
+    float: left;
+    margin-right: 20px;
+
+    img {
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+    }
+}
+
+.comment__block--header {
+    border-bottom: 1px solid $grey;
+    padding: 20px;
+    color: $grey-mid;
+
+    span {
+        color: $green-dark;
+    }
+}
+
+.comment__block--body {
+    padding: 20px 30px;
+}

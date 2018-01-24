@@ -1,0 +1,15 @@
+.login-page {
+    background: url("../images/login-bg.png") center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login-page__wrapper {
+    width: 100%;
+}
+
+.login-page__wrapper--logo {
+    margin-bottom: 60px;
+}

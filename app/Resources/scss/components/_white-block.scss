@@ -1,0 +1,12 @@
+.white-block {
+    background-color: $white;
+    margin-bottom: 20px;
+
+    -webkit-box-shadow: 4px 6px 8px -6px $grey;
+    -moz-box-shadow: 4px 6px 8px -6px $grey;
+    box-shadow: 4px 6px 8px -6px $grey;
+
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}

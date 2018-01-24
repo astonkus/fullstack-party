@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid list__container">
+        <div class="row list__row">
+            <div class="col-lg-6">
+                <div class="row list__issues-row">
+                    <div class="col-lg-12 list__filter">
+                        <a class="list__filter--open" href="{{ path('issues', { 'state': 'open' }) }}" title="{{ 'app.list.state.open'|trans }}">{{ openIssuesCount }} {{ 'app.list.state.open'|trans }}</a>
+                        <a class="list__filter--closed" href="{{ path('issues', { 'state': 'closed' }) }}" title="{{ 'app.list.state.closend'|trans }}">{{ closedIssuesCount }} {{ 'app.list.state.closend'|trans }}</a>
+                    </div>
+                    {% for issue in data %}
+                        <div class="col-lg-12 white-block list__issue">
+                            <div class="list__issue--icon">
+                                <img src="{{ asset('assets/images/icons/ico-attention-green.png') }}" alt="attention icon"/>
+                            </div>
+                            <div class="list__issue--content">
+                                <div>
+                                    <a href="{{ path(
+                                    'issue',
+                                    {
+                                        'owner': issue.owner,
+                                        'repo': issue.repo,
+                                        'number': issue.number
+                                    }
+                                    ) }}">
+                                        {{ issue.title }}
+                                    </a>
+                                </div>
+                                <div class="list__issue--time">
+                                    #{{ issue.number }} {{ 'app.list.opened'|trans }} {{ issue.createdAt|ago }} {{ 'app.list.by'|trans }} <span>{{ issue.user }}</span>
+                                </div>
+                            </div>
+                            <div class="list__issue--comment">
+                                <span>{{ issue.commentsCount }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        {% include '@App/pagination/index.html.twig' with {
+                        currentFilters: { },
+                        currentPage: currentPage,
+                        paginationPath: "issues",
+                        lastPage: pageCount,
+                        showAlwaysFirstAndLast: true
+                        } only %}
+                    </div>
+                </div>
+            </div>
+            <div class="list__right-side col-lg-6 no-float d-flex h-100">
+                <div class="row list__right-side--row justify-content-center align-self-center text-center">
+                    <div class="list__right-side--title col-lg-12">
+                        <h1>{{ 'app.list.full_stack_title'|trans }}</h1>
+                    </div>
+                    <div class="col-lg-12">
+                        <img src="{{ asset('assets/images/logo-white-small.png') }}" alt="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
