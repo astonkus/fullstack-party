@@ -21,4 +21,4 @@ parameters:
     github_integration.base_api_url: https://api.github.com
     github_integration.client_id: 1adf824470353956dccf
     github_integration.client_secret: 1bbd0d80a14bd88861a337128f2313a367803874
-    github_integration.per_page: 10
+    github_integration.per_page: 4

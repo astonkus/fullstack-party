@@ -1,26 +1,46 @@
-.list__right-side {
+.list__right--side {
     background: url("../images/list-bg.png") center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    position: relative;
+    text-align: center;
+    display: block;
+    height: 100%;
+
+    &::before,
+    .list__right-side--wrapper {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &::before {
+        content: '';
+        width: 0;
+        height: 100%;
+    }
 }
 
 .list__left-side {
-    background-color: $grey-light;
+    overflow-y: scroll;
 }
 
 .list__container {
-    height: 100%;
     display: table;
     box-sizing: border-box;
+
+    height: calc(100% - 111px);
+    height: -webkit-calc(100% - 111px);
+    height: -moz-calc(100% - 111px);
 }
 
 .list__row {
     height: 100%;
 }
 
-.list__right-side--row {
+.list__right-side--wrapper {
     width: 100%;
 }
 
@@ -39,6 +59,12 @@
     padding: 20px;
 }
 
+.list__issue--title {
+    &:hover {
+        color: $grey-dark;
+    }
+}
+
 .list__issue--icon {
     margin-right: 20px;
     float: left;
@@ -55,6 +81,10 @@
 
 .list__issue--comment {
     float: right;
+
+    a, a:hover {
+        color: $grey-dark;
+    }
 
     span:before {
         content: "";

@@ -6,10 +6,34 @@
     background-size: cover;
 }
 
+.login-page__container {
+    position: relative;
+    text-align: center;
+    display: block;
+    height: 100%;
+
+    &::before,
+    .login-page__wrapper {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &::before {
+        content: '';
+        width: 0;
+        height: 100%;
+    }
+}
+
 .login-page__wrapper {
     width: 100%;
 }
 
 .login-page__wrapper--logo {
     margin-bottom: 60px;
+    text-align: center;
+}
+
+.login-page__wrapper--button {
+    text-align: center;
 }

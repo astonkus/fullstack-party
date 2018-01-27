@@ -88,8 +88,10 @@ class IssueManager
                 'commentsCount' => $issue['comments'],
                 'createdAt' => $issue['created_at'],
                 'user' => $issue['user']['login'],
+                'user_html_url' => $issue['user']['html_url'],
                 'repo' => $issue['repository']['name'],
                 'owner' => $issue['repository']['owner']['login'],
+                'labels' => $issue['labels'],
             ];
 
             return $result;
@@ -109,6 +111,7 @@ class IssueManager
             'commentsCount' => $issue['comments'],
             'createdAt' => $issue['created_at'],
             'user' => $issue['user']['login'],
+            'user_html_url' => $issue['user']['html_url'],
         ];
     }
 
@@ -121,6 +124,7 @@ class IssueManager
         return array_map(function ($issue) {
             $result = [
                 'user' => $issue['user']['login'],
+                'user_html_url' => $issue['user']['html_url'],
                 'avatar' => $issue['user']['avatar_url'],
                 'createdAt' => $issue['created_at'],
                 'body' => $issue['body'],

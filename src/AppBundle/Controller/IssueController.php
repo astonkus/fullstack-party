@@ -12,6 +12,9 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class IssueController extends Controller
 {
+    const STATE_OPEN = 'open';
+    const STATE_CLOSED = 'closed';
+
     /**
      * @Route(
      *     "/{state}",
@@ -35,8 +38,8 @@ class IssueController extends Controller
                 'data' => $issueManager->getList($state, $currentPage),
                 'currentPage' => $currentPage,
                 'pageCount' => $issueManager->getPageCountByState($state),
-                'openIssuesCount' => $issueManager->getIssuesCountByState('open'),
-                'closedIssuesCount' => $issueManager->getIssuesCountByState('closed'),
+                'openIssuesCount' => $issueManager->getIssuesCountByState(self::STATE_OPEN),
+                'closedIssuesCount' => $issueManager->getIssuesCountByState(self::STATE_CLOSED),
             ]
         );
     }
@@ -45,7 +48,6 @@ class IssueController extends Controller
      * @Route(
      *     "/view/{owner}/{repo}/{number}",
      *     name="issue",
-     *     defaults={"page": 1},
      *     requirements= {"number": "\d+"}
      * )
      * @param Request $request

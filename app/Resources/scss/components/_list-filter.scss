@@ -1,4 +1,4 @@
-.list__filter {
+.list-filter {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -9,21 +9,37 @@
         color: $grey-dark;
         display: inline-block;
 
+        &.active {
+            color: $black;
+
+            &:before {
+                opacity: 1;
+                filter: alpha(opacity=100);
+            }
+        }
+
+        &:hover {
+            text-decoration: none;
+            color: $light-green;
+        }
+
         &:before {
             content: "";
             display: block;
             width: 16px;
             height: 16px;
             float: left;
-            margin: 0px 6px 0 0;
+            margin: 0 6px 0 0;
+            opacity: 0.35;
+            filter: alpha(opacity=35);
         }
     }
 }
 
-.list__filter--open:before {
+.list-filter__open:before {
     background: url("../images/icons/ico-attention-black.png") no-repeat;
 }
 
-.list__filter--closed:before {
+.list-filter__closed:before {
     background: url("../images/icons/ico-closed-black.png") no-repeat;
 }

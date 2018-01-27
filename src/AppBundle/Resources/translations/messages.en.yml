@@ -11,7 +11,7 @@ app:
         by: by
         state:
             open: Open
-            closend: Closed
+            closed: Closed
 
     view:
         back: Back to issues

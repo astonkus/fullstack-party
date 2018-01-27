@@ -1,8 +1,8 @@
 {
   "name": "tesonet",
   "version": "1.0.0",
-  "description": "tesonet =======",
-  "main": "_gulpfile.js",
+  "description": "",
+  "main": "gulpfile.js",
   "directories": {
     "test": "tests"
   },

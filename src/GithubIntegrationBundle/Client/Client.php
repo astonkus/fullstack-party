@@ -26,6 +26,11 @@ class Client
     private $tokenStorage;
 
     /**
+     * @var array
+     */
+    private $cache;
+
+    /**
      * Client constructor.
      * @param TokenStorage $tokenStorage
      * @param array $settings
@@ -72,6 +77,10 @@ class Client
      */
     public function getIssuesCountByState(string $state): int
     {
+        if (isset($this->cache[$state])) {
+            return $this->cache[$state];
+        }
+
         $response = $this->client->get('issues', [
             'query' => [
                 'access_token' => $this->tokenStorage->getToken()->getAccessToken(),
@@ -79,7 +88,9 @@ class Client
             ]
         ]);
 
-        return count(json_decode($response->getBody()->getContents(), true));
+        $this->cache[$state] = count(json_decode($response->getBody()->getContents(), true));
+
+        return $this->cache[$state];
     }
 
     /**
